@@ -51,7 +51,7 @@ html{
 body{
     font-family: 'Poppins' , sans-serif;
     min-height: 100vh;
-    min-width: 100vw;
+    
     overflow-x: hidden;
     position: relative;
 }
@@ -96,7 +96,7 @@ ul{
 }
 
 .img-fluid{
-    max-width: 160%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -1143,10 +1143,6 @@ header .container{
         text-align: center;
     }
 
-    .portfolio_filters{
-    
-        column-gap: 2px;
-    }
     
 
     .portfolio_wrap img{
