@@ -1142,6 +1142,11 @@ header .container{
         grid-template-columns: 1fr;
         text-align: center;
     }
+
+    .portfolio_filters{
+    
+    column-gap: 5px;
+}
     
 
     .portfolio_wrap img{
