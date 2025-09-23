@@ -1059,38 +1059,7 @@ header .container{
     height: 250px;
 }
 
-.portfolio_wrap::before{
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border-top: 3px solid rgba(0, 0, 0, .1);
-    border-left: 3px solid rgba(0, 0, 0, .1);
-    transition: .4s;
-    transform: scale(0);
-}
 
-.portfolio_wrap::after{
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border-bottom: 3px solid rgba(0, 0, 0, .1);
-    border-right: 3px solid rgba(0, 0, 0, .1);
-    transition: .4s;
-    transform: scale(0);
-}
-
-.portfolio_wrap:hover::before,
-.portfolio_wrap:hover::after{
-    transform: scale(1);
-}
 
 .portfolio_info{
     position: absolute;
@@ -1115,18 +1084,23 @@ header .container{
 }
 
 .portfolio_info h4{
-    font-size: 24px;
+    text-transform: uppercase;
+    width: 300px;
+    font-size: 30px;
     color: #333;
-    font-weight: 500;
+    font-weight: 900;
 }
 
 .portfolio_info p{
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-weight: 500;
+    width: 280px;
 }
 
 .portfolio_links a{
     font-size: 28px;
     color: #333;
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 1180px) {
@@ -1178,12 +1152,22 @@ header .container{
 
     .portfolio_info{
         
-        text-align: center;
+        left: 210px;
         width: 330px;
         height: 200px;
-        left: 38px;
+        
         
     }
+
+    .portfolio_info h4{
+    
+    font-size: 20px;
+    
+}
+
+.portfolio_info p{
+    font-size: 14px;
+}
 
     
 }
