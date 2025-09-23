@@ -1152,7 +1152,7 @@ header .container{
 
     .portfolio_info{
         
-        left: 210px;
+        left: 105px;
         width: 330px;
         height: 200px;
         
@@ -1563,4 +1563,5 @@ form input,form textarea{
         flex-direction: column;
     }
 }
+
 
