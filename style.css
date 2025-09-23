@@ -1145,8 +1145,8 @@ header .container{
 
     .portfolio_filters{
     
-    column-gap: 5px;
-}
+        column-gap: 2px;
+    }
     
 
     .portfolio_wrap img{
