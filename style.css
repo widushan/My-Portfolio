@@ -1084,10 +1084,10 @@ header .container{
     
     flex-direction: column;
     row-gap: 10px;
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(29, 29, 29, 0.5);
     transform: scale(0);
     transition: .4s;
-    color: #333;
+    color: white;
 }
 
 .portfolio_wrap:hover .portfolio_info{
