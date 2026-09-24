@@ -1257,7 +1257,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>  
     <script>
         var typed = new Typed(".auto-input" , {
-            strings: ["Software Developer" , "Web & Mobile Developer" , "Content Creator" , "AI/ML Developer" , "Logo Designer"] ,
+            strings: ["Software Developer" , "Web & Mobile Developer" , "Content Creator" , "AI/ML Developer"] ,
             typeSpeed: 100,
             backSpeed: 40,
             loop: true,
@@ -1271,25 +1271,22 @@
         const resume = document.querySelector('.page_heading');
 
         function resumeActive(){
-            const scrollY = window.pageYOffset;
+            const scrollY = window.pageYOffset + 160;
+            let currentPage = pages[0];
 
             pages.forEach(page => {
-                const sectionHeight = page.offsetHeight;
-                const sectionTop = page.offsetTop - 120;
-
-                let sectionId = page.getAttribute('id');
-
-                if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-                    document.querySelector('.resume_tabs a[href *=' + sectionId +']').classList.add('current');
-                } else {
-                    document.querySelector('.resume_tabs a[href *=' + sectionId +']').classList.remove('current');
+                if (scrollY >= page.offsetTop) {
+                    currentPage = page;
                 }
+            });
 
-
-            })
+            document.querySelectorAll('.resume_tabs a').forEach(link => {
+                link.classList.toggle('current', link.getAttribute('href') === `#${currentPage.id}`);
+            });
         }
 
         window.addEventListener('scroll', resumeActive);
+        window.addEventListener('load', resumeActive);
     </script>
 
     <!-----------------mixitup---------------------------->

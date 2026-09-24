@@ -1,6 +1,6 @@
 const iconToggle = document.querySelector('.toggle_icon');
 const navbarMenu = document.querySelector('.menu');
-const menuLinks = document.querySelector('.menu_link');
+const menuLinks = document.querySelectorAll('.menu_link');
 const iconClose = document.querySelector('.close_icon');
 
 iconToggle.addEventListener('click', () => {
@@ -44,18 +44,23 @@ function activeLink() {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 80;
 
-        let sectionId = section.getAttribute('id');
+        const sectionId = section.getAttribute('id');
+        const menuLink = document.querySelector(`.menu a[href="#${sectionId}"]`);
 
-        if(yOffset > sectionTop && yOffset <= sectionTop + sectionHeight){
-            document.querySelector('.menu a[href *=' + sectionId +']').classList.add('active-link');
+        if (!menuLink) {
+            return;
+        }
+
+        if (yOffset >= sectionTop && yOffset < sectionTop + sectionHeight) {
+            menuLink.classList.add('active-link');
         } else {
-            document.querySelector('.menu a[href *=' + sectionId +']').classList.remove('active-link');
+            menuLink.classList.remove('active-link');
         }
     })
 }
 
-
-window.addEventListener("scroll" , activeLink());
+window.addEventListener('scroll', activeLink);
+window.addEventListener('load', activeLink);
 
 
 
